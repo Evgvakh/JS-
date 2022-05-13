@@ -123,31 +123,24 @@ const personGenerator = {
 
     randomIntNumber: (max = 1, min = 0) => Math.floor(Math.random() * (max - min + 1) + min),
 
-    randomBirth: function() {
-
-        let month = this.randomValue(this.monthJson);
-        
-        console.log(month);
-        if (month === 'января' || 'марта' || 'мая' || 'июля' || 'августа' || 'октября' || 'декабря') {
-
-            return this.randomIntNumber(31, 1) + " " + month + " " + this.randomIntNumber(2020, 1930);
-
-        } else if (month === 'февраля') {
-
-            return this.randomIntNumber(28, 1) + "" + month + "" + this.randomIntNumber(2020, 1930);
-
-        } else {
-
-            return this.randomIntNumber(30, 1) + "" + month + "" + this.randomIntNumber(2020, 1930);
-
-        }
-       
+    randomBirth: function () {
+        year = this.randomIntNumber(2002, 1950);
+        month = this.randomValue(this.monthJson);
+        if (this.month === 'id_4' || 'id_6' || 'id_9' || 'id_11') {
+            day = this.randomIntNumber(22, 21);
+        } else if (this.month === 'id_2' && year % 4 === 0) {
+            day = this.randomIntNumber(24, 23);
+        } else if (this.month === 'id_2' && year % 4 !== 0) {
+            day = this.randomIntNumber(12, 11);
+        } else day = this.randomIntNumber(2, 1);
+        date = `${day} ${month} ${year} г.`;
+        return date;
     },
 
     randomGender: () => Math.random() > 0.5 ? personGenerator.GENDER_FEMALE : personGenerator.GENDER_MALE,
 
     randomValue: function (json) {
-        const obj = JSON.parse(json);
+        const obj = JSON.parse(json);        
         const prop = `id_${this.randomIntNumber(obj.count, 1)}`; 
         return obj.list[prop];
     },
@@ -224,7 +217,8 @@ const personGenerator = {
         this.person.surName = this.randomSurname();
         this.person.birth = this.randomBirth();
         this.person.middleName = this.randomMiddlename(); 
-        this.person.profession = this.randomProfession();                       
+        this.person.profession = this.randomProfession();
+        console.log(this.person);                       
         return this.person;
     }
 };

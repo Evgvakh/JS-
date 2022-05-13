@@ -2,19 +2,19 @@
 window.onload = function()
 {
     const initPerson = personGenerator.getPerson();
-    document.getElementById('firstNameOutput').innerText = initPerson.firstName;
-    document.getElementById('genderOutput').innerText = initPerson.gender;
-    document.getElementById('surnameOutput').innerText = initPerson.surName;
-    document.getElementById('birthYearOutput').innerText = initPerson.birth;
-    document.getElementById('middleNameOutput').innerText = initPerson.middleName;
-    document.getElementById('professionOutput').innerText = initPerson.profession;
+    document.querySelector("#firstNameOutput").innerText = initPerson.firstName;
+    document.querySelector("#genderOutput").innerText = initPerson.gender;
+    document.querySelector("#surnameOutput").innerText = initPerson.surName;
+    document.querySelector("#birthYearOutput").innerText = initPerson.birth;
+    document.querySelector("#middleNameOutput").innerText = initPerson.middleName;
+    document.querySelector("#professionOutput").innerText = initPerson.profession;
 };
 
 function resetButton() {
-    document.getElementById('firstNameOutput').innerText = 'Имя';
-    document.getElementById('genderOutput').innerText = 'Пол';
-    document.getElementById('surnameOutput').innerText = 'Фамилия';
-    document.getElementById('birthYearOutput').innerText = 'Год рождения';
-    document.getElementById('middleNameOutput').innerText = 'Отчество';
-    document.getElementById('professionOutput').innerText = 'Профессия';
+    document.querySelector("#firstNameOutput").innerText = 'Имя';
+    document.querySelector("#genderOutput").innerText = 'Пол';
+    document.querySelector("#surnameOutput").innerText = 'Фамилия';
+    document.querySelector("#birthYearOutput").innerText = 'Год рождения';
+    document.querySelector("#middleNameOutput").innerText = 'Отчество';
+    document.querySelector("#professionOutput").innerText = 'Профессия';
 };

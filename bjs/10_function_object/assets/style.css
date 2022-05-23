@@ -1,0 +1,31 @@
+.card-header {
+    background-color: rgb(0, 225, 255);
+}
+
+.offset-md-3 {
+    margin-top: 25%;
+    padding: 0%;
+    border-style:solid;
+}
+
+input {
+    background-color: rgb(176, 222, 228);
+    border-style: none;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.card-header {
+    border-style: groove;
+}
+
+.card-body {
+    background-color:rgb(245, 243, 240);
+}
+
+.m-0 {
+font-style: italic;
+font-weight: 700;
+font-size: 2ch;
+}
+
